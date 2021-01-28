@@ -15,9 +15,11 @@
 <!--   💰 document.getElementById('root') -->
 <!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
 <body>
-    <div id="root"></div>
     <script type="module">
-        const myroot=document.getElementById("root");
+        const myroot=document.createElement('div');
+        // myroot.setAttribute('id','root');
+        myroot.id="root";
+        document.body.append(myroot);
         const mydiv=document.createElement('div');
         mydiv.textContent="Hello World"
         mydiv.className="container"
