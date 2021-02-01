@@ -12,7 +12,8 @@
     // 🐨 re-implement this using JSX!
     const className = 'container'
     const children = 'Hello World'
-    const element = <div className={className}>{children}</div>
+    const props = {children, className}
+    const element = <div {...props}/>
     ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
