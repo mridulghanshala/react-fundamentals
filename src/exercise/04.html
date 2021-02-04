@@ -19,6 +19,10 @@
     function message1({children}){ // we are destructuring here
       return <div className="message">{children}</div>
     }
+
+    function Message({children}){ // we are destructuring here
+      return <div className="message">{children}</div>
+    }
   
     // 🐨 use that function in place of the divs below with:
     // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
@@ -36,6 +40,10 @@
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     const hello=React.createElement(message1,'','Hello World')
     const hello2=React.createElement(message1,{children:"Hello World"})
-    ReactDOM.render(hello2, document.getElementById('root'))
+    
+    const props={children:"Hello World"}
+    const jsx=<Message {...props}/>
+    const jsx1=<Message>Hello World</Message>
+    ReactDOM.render(jsx1, document.getElementById('root'))
   </script>
 </body>
