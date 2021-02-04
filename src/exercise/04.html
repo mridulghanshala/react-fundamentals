@@ -34,6 +34,8 @@
     )
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
-    ReactDOM.render(element, document.getElementById('root'))
+    const hello=React.createElement(message1,'','Hello World')
+    const hello2=React.createElement(message1,{children:"Hello World"})
+    ReactDOM.render(hello2, document.getElementById('root'))
   </script>
 </body>
