@@ -65,6 +65,13 @@
         <Message1 greeting="Goodbye" subject="World" />
       </div>
     )
-    ReactDOM.render(al, document.getElementById('root'))
+
+    const fragment=(
+      <React.Fragment>
+        <Message1 greeting= "Hello" subject="World" />
+        <Message1 greeting="Goodbye" subject="World" />
+      </React.Fragment>
+    )
+    ReactDOM.render(fragment, document.getElementById('root'))
   </script>
 </body>
