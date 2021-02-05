@@ -40,10 +40,36 @@
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     const hello=React.createElement(message1,'','Hello World')
     const hello2=React.createElement(message1,{children:"Hello World"})
-    
+
     const props={children:"Hello World"}
     const jsx=<Message {...props}/>
     const jsx1=<Message>Hello World</Message>
-    ReactDOM.render(jsx1, document.getElementById('root'))
+
+
+  function Message1({subject, greeting}) {
+    return (
+      <div className="message">
+        {greeting}, {subject}
+      </div>)
+    }
+    const PropTypes = {
+      string(props, propName, componentName) {
+      if (typeof props[propName] !== 'string') {
+        return new Error('Enter valid string')
+      }
+    },
+  }
+  Message1.propTypes={
+    greeting: PropTypes.string,
+    subject: PropTypes.string,
+  }
+
+    const al=(
+      <div className="container">
+        <Message1 greeting={112344} subject="World" />
+        <Message1 greeting="Goodbye" subject="World" />
+      </div>
+    )
+    ReactDOM.render(al, document.getElementById('root'))
   </script>
 </body>
