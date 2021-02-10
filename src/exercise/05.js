@@ -4,6 +4,7 @@
 import * as React from 'react'
 import '../box-styles.css'
 
+
 // 💰 Use the className for the size and style (backgroundColor) for the color
 // 💰 each of the elements should also have the "box" className applied
 
@@ -16,13 +17,23 @@ const smallBox = <div className='box box--small' style={{backgroundColor:'lightb
 const mediumBox = <div className='box box--medium' style={{backgroundColor:'pink',fontStyle:'italic'}}>medium pink box</div>
 const largeBox = <div className='box box--large' style={{backgroundColor:'orange',fontStyle:'italic'}}>large orange box</div>
 
+function Box({style,className,...otherProps}){
+  return <div className={`box ${className}`} style={{fontStyle:"italic",...style}} {...otherProps}></div>
+}
 function App() {
   return (
     <div>
-      {smallBox}
-      {mediumBox}
-      {largeBox}
+<Box className="box--small" style={{backgroundColor: 'lightblue'}}>
+  small lightblue box
+</Box>
+<Box className="box--medium" style={{backgroundColor: 'pink'}}>
+medium pink box
+</Box>
+<Box className="box--large" style={{backgroundColor: 'orange'}}>
+large orange box
+</Box>
     </div>
+
   )
 }
 
